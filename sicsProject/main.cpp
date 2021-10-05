@@ -7,12 +7,13 @@
 #include <adjacency_listmat.h>
 #include <vertex_order.h>
 #include <lazyforwardcheckingbackjumping_low_bitset_degreeprune_ind.h>
+#include <backmarking_ind.h>
 
 
 int main(int argc, char * argv[]) {
 
   //LABELED
-  /*using graph_type = sics::adjacency_list<uint16_t, sics::undirected_tag, std::string>;
+  using graph_type = sics::adjacency_list<uint16_t, sics::directed_tag, std::string>;
 
   graph_type g(3);
   g.set_vertex_label(0, "red");
@@ -31,10 +32,10 @@ int main(int argc, char * argv[]) {
   h.add_edge(1, 2);
   h.add_edge(2, 0);
   h.add_edge(1, 3);
-  h.add_edge(3, 0);*/
+  h.add_edge(3, 0);
   
   //UNLABELED
-  using graph_type = sics::adjacency_list<uint16_t, sics::directed_tag>;
+  /*using graph_type = sics::adjacency_list<uint16_t, sics::directed_tag>;
 
   graph_type g(3);
   g.add_edge(0, 1);
@@ -46,7 +47,7 @@ int main(int argc, char * argv[]) {
   h.add_edge(1, 2);
   h.add_edge(2, 0);
   h.add_edge(1, 3);
-  h.add_edge(3, 0);
+  h.add_edge(3, 0);*/
 
   int count = 0;
   auto index_order_g = sics::vertex_order_DEG(g);

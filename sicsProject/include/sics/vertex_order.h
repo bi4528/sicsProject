@@ -17,7 +17,7 @@ std::vector<typename G::index_type> vertex_order_DEG(G const & g) {
   std::vector<typename G::index_type> order(g.num_vertices());
   std::iota(order.begin(), order.end(), 0);
   std::sort(order.begin(), order.end(), [&g](auto u, auto v) {
-    return g.degree(u) > g.degree(v);
+    return g.degree(u) > g.degree(v); //in adjacency_list.h in template for dircted graphs (both labeled and unlabeled) there's no atribut degree)
   });
   return order;
 }

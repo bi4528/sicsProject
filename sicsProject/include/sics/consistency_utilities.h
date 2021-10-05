@@ -146,7 +146,7 @@ bool degree_condition(
     H const & h,
     typename H::index_type v) {
   if constexpr (is_directed_v<G>) {
-    return g.out_degree(u) <= h.out_degree(v) && g.in_degree(u) <= h.in_degree(v);
+    return g.out_degree(u) <= h.out_degree(v) && g.in_degree(u) <= h.in_degree(v); //in adjacency_list.h in template for dircted graphs (both labeled and unlabeled) there's no atribut in_degree)
   } else {
     return g.degree(u) <= h.degree(v);
   }
