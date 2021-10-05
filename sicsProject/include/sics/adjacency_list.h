@@ -73,7 +73,7 @@ class adjacency_list<Index, bidirectional_tag, VertexLabel, void>
 
   template <
       typename G, 
-      typename std::enable_if_t<!std::is_integral<G>::value, int> = 0>
+      typename std::enable_if_t<!std::is_integral<G>::value, int> = 0> //this part was missing
   explicit adjacency_list(G const & g)
       : base(g),
         m_in_edges(g.num_vertices()) {
@@ -136,7 +136,7 @@ class adjacency_list<Index, directed_tag, VertexLabel, void> {
 
   template <
       typename G,
-      typename std::enable_if_t<!std::is_integral<G>::value, int> = 0 >
+      typename std::enable_if_t<!std::is_integral<G>::value, int> = 0 > //this part was missing
   explicit adjacency_list(G const & g)
       : m_vertex_labels(g.num_vertices()),
         m_out_edges(g.num_vertices) {
@@ -209,7 +209,7 @@ class adjacency_list<Index, undirected_tag, VertexLabel, void> {
 
   template <
       typename G,
-      typename std::enable_if_t<!std::is_integral<G>::value, int> = 0 >
+      typename std::enable_if_t<!std::is_integral<G>::value, int> = 0 > //this part was missing
   explicit adjacency_list(G const & g)
       : m_vertex_labels(g.num_vertices()),
         m_edges(g.num_vertices) {
