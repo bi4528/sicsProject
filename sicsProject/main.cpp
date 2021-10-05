@@ -10,7 +10,9 @@
 
 
 int main(int argc, char * argv[]) {
-  using graph_type = sics::adjacency_list<uint16_t, sics::undirected_tag, std::string>;
+
+  //LABELED
+  /*using graph_type = sics::adjacency_list<uint16_t, sics::undirected_tag, std::string>;
 
   graph_type g(3);
   g.set_vertex_label(0, "red");
@@ -25,6 +27,21 @@ int main(int argc, char * argv[]) {
   h.set_vertex_label(1, "blue");
   h.set_vertex_label(2, "green");
   h.set_vertex_label(3, "green");
+  h.add_edge(0, 1);
+  h.add_edge(1, 2);
+  h.add_edge(2, 0);
+  h.add_edge(1, 3);
+  h.add_edge(3, 0);*/
+  
+  //UNLABELED
+  using graph_type = sics::adjacency_list<uint16_t, sics::directed_tag>;
+
+  graph_type g(3);
+  g.add_edge(0, 1);
+  g.add_edge(1, 2);
+  g.add_edge(2, 0);
+
+  graph_type h(4);
   h.add_edge(0, 1);
   h.add_edge(1, 2);
   h.add_edge(2, 0);

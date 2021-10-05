@@ -289,7 +289,9 @@ class adjacency_list<Index, bidirectional_tag, void, void>
         m_in_edges(n) {
   }
 
-  template <typename G>
+  template <
+    typename G,
+    typename std::enable_if_t<!std::is_integral<G>::value, int> = 0 > //this part was missing
   explicit adjacency_list(G const & g)
       : base(g),
         m_in_edges(g.num_vertices()) {
@@ -344,7 +346,9 @@ class adjacency_list<Index, directed_tag, void, void> {
       : m_out_edges(n) {
   }
 
-  template <typename G>
+  template <
+    typename G,
+    typename std::enable_if_t<!std::is_integral<G>::value, int> = 0 > //this part was missing
   explicit adjacency_list(G const & g)
       : m_out_edges(g.num_vertices()) {
     auto n = g.num_vertices();
@@ -401,7 +405,9 @@ class adjacency_list<Index, undirected_tag, void, void> {
       : m_edges(n) {
   }
 
-  template <typename G>
+  template <
+    typename G,
+    typename std::enable_if_t<!std::is_integral<G>::value, int> = 0 > //this part was missing
   explicit adjacency_list(G const & g)
       : m_edges(g.num_vertices()) {
     auto n = g.num_vertices();
